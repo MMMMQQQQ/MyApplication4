@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    >
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        tools:context="in.wptrafficanalyzer.myapplication.MapsActivity" />
+
+
+
+
+    <Button
+        android:id="@+id/bicycling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="bicycling"
+        android:onClick="geoLocate"
+
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/place_autocomplete_fragment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/walking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="walking"
+        android:onClick="geoLocate"
+        android:layout_alignBaseline="@+id/bicycling"
+        android:layout_alignBottom="@+id/bicycling"
+        android:layout_toRightOf="@+id/bicycling"
+        android:layout_toEndOf="@+id/bicycling" />
+
+    <Button
+        android:id="@+id/driving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="driving"
+        android:onClick="geoLocate"
+        android:layout_alignBaseline="@+id/walking"
+        android:layout_alignBottom="@+id/walking"
+        android:layout_toRightOf="@+id/walking"
+        android:layout_toEndOf="@+id/walking" />
+
+    <Button
+        android:id="@+id/search"
+        android:onClick="Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/bicycling"
+        android:layout_alignRight="@+id/bicycling"
+        android:layout_below="@+id/walking"
+        android:text="Search" />
+
+    <fragment
+        android:id="@+id/place_autocomplete_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/driving"
+        android:layout_alignEnd="@+id/driving" />
+
+
+</RelativeLayout>
